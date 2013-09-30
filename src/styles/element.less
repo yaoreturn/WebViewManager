@@ -1,0 +1,80 @@
+.retina(@path, @w: auto, @h: auto, @x: left, @y: top, @repeat: no-repeat) {
+  background-image: url(@path);
+  background-repeat:  @repeat;
+  background-size: @w @h;
+  background-position: @x @y;
+  
+  @at20x_path: ~`"@{path}".split('.')[0] + "@2x" + "." + "@{path}".split('.')[1]`;
+  
+  @media all and (-webkit-min-device-pixel-ratio : 2) {
+    background-image: url(@at20x_path);
+  }  
+}
+
+.gradient(@start: #FFF, @stop: #EEE) {
+  background: -webkit-gradient(linear,
+                               left top,
+                               left bottom,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow-light(@horizontal:0, @vertical:1px, @blur:1px, @alpha: 1) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(255, 255, 255, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(255, 255, 255, @alpha);
+}
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.text-shadow-light(@x-axis: 0, @y-axis: 1px, @blur: 0, @alpha: 1) {
+  -webkit-text-shadow: @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+  text-shadow: @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+}
+
+.text-shadow-dark(@x-axis: 0, @y-axis: 1px, @blur: 0, @alpha: 1) {
+  -webkit-text-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  text-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.rounded(@radius: 4px) {
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.rounded-each(@topleft:4px, @topright:4px, @bottomright:4px, @bottomleft:4px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft; 
+}
+
+.opacity(@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+
+.rotation(@deg:5deg){
+  -webkit-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+.scale(@ratio:1.5){
+  -webkit-transform:scale(@ratio);
+  transform:scale(@ratio);
+}
+
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
+.translate(@x:0, @y:0) {
+  -webkit-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
