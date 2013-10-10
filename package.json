@@ -1,5 +1,5 @@
 {
-  "name": "viewManager",
+  "name": "webViewManager",
   "description" : "Web View Manager for Web & Hybird app",
   "keywords" : ["webview", "webapp", "ioslike"],
   "author" : "yao <yaoyihua@gmail.com>",
@@ -7,11 +7,6 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-cmd-transport": "~0.2.3",
-    "grunt-cmd-concat": "~0.2.2",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-less": "~0.5.2"
   }
 }
